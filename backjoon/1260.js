@@ -41,6 +41,32 @@ function DFS(v) {
 DFS(v);
 console.log('anser_dfs', answer_dfs.join(' '));
 
+// BFS
+const anser_bfs = [];
+visited.fill(0);
+
+function BFS(v) {
+    let que = [v];
+    while (que.length) {
+        let x = que.shift();
+        if (visited[x] === 1) {
+            continue;
+        }
+        visited[x] = 1;
+        anser_bfs.push(x);
+        for (let i = 0; i < graph[x].length; i++) {
+            let next = graph[x][i];
+            if (visited[next] === 0) {
+                que.push(next);
+            }
+        }
+    }
+}
+
+BFS(v);
+
+console.log('answer_bfs', anser_bfs.join(' '));
+
 console.log('n', n);
 console.log('m', m);
 console.log('v', v);
