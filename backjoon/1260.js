@@ -18,10 +18,12 @@ for (let i = 0; i < m; i++) {
 graph.forEach((e) => {
     e.sort((a, b) => a - b);
 });
+console.log('graph', graph);
 
 let visited = new Array(n + 1).fill(0);
 let answer_dfs = [];
 
+console.log('visited', visited);
 //DFS
 
 function DFS(v) {
@@ -37,6 +39,7 @@ function DFS(v) {
         }
     }
 }
+console.log('answer_dfs', answer_dfs);
 
 DFS(v);
 console.log('anser_dfs', answer_dfs.join(' '));
@@ -66,7 +69,3 @@ function BFS(v) {
 BFS(v);
 
 console.log('answer_bfs', anser_bfs.join(' '));
-
-console.log('n', n);
-console.log('m', m);
-console.log('v', v);
