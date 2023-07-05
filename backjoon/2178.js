@@ -12,6 +12,8 @@ function bfs(x, y) {
     const result = [];
     const visisted = {};
     visisted[[x, y]] = 1;
+    console.log('visisted', visisted);
+    console.log('queue', queue);
     let dx = [0, 0, -1, 1];
     let dy = [-1, 1, 0, 0];
     // vistied를 몇번째 방문했는지 판단하는 객체로 활용한다.
