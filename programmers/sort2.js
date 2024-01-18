@@ -9,18 +9,16 @@ function solution(numbers) {
     // 맨 처음 수와 다음 수의 콤비네이션을 2개(앞 뒤 순서 변경) 만들어서 대소 비교 후 큰 쪽 수 생성
     // 그렇게 만들다보면 만들어질듯?
 
-    for (let i = 0; i < numbers.length - 1; i) {
-        const a = String(numbers[i]) + String(numbers[i + 1]);
-        const b = String(numbers[i + 1]) + String(numbers[i]);
+    const compareFunc = (a, b) => {
+        const base = String(a) + String(b);
+        const compare = String(b) + String(a);
 
-        let temp = +a >= +b ? a : b;
+        return +compare - +base;
+    };
 
-        numbers.splice(0, 2);
-        numbers.unshift(+temp);
-    }
-
-    return numbers[0] + '';
+    const answer = numbers.sort(compareFunc).join('');
+    
+    return answer[0] === '0' ? '0' : answer;
 }
 
 console.log('---answer--- : ', solution([6, 10, 2]));
-
