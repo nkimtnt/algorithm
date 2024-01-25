@@ -5,7 +5,7 @@
 
 function solution(n, wires) {
     let answer = 101;
-    let tree = Array.from(Array(n), () => []);
+    let tree = Array.from(Array(n + 1), () => []);
 
     // 각 노드들의 연결을 표현한 그래프 생성
     wires.map((element) => {
@@ -33,8 +33,8 @@ function solution(n, wires) {
                     queue.push(element);
                 }
             });
-
-            // 숫자는 세줘야지(큐에 존재하는 노드들이 없어도 자기 자신 방문이니까!)
+            
+            // 숫자는 세어 줘야지(큐에 존재하는 노드들이 없어도 자기 자신 방문이니까!)
             count++;
         }
 
@@ -53,5 +53,5 @@ function solution(n, wires) {
 }
 
 
-console.log('---answer--- : ', solution(10, [[1, 3], [2, 3], [3, 4], [4, 5], [4, 6], [4, 7], [7, 8], [7, 9]]));
+console.log('---answer--- : ', solution(9, [[1, 3], [2, 3], [3, 4], [4, 5], [4, 6], [4, 7], [7, 8], [7, 9]]));
 
