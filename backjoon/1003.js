@@ -1,3 +1,8 @@
+/**
+ * 피보나치함수
+ * https://www.acmicpc.net/problem/1003
+ */
+
 // const fs = require('fs');
 // const input = fs.readFileSync('./example.txt').toString().trim().split('\n').map(s => +s);
 //
