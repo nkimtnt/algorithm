@@ -46,6 +46,8 @@ let memo = [[1, 0], [0, 1]];
 while (num.length) {
     const x = num.shift();
 
+    // 직전 두 개를 더해서 22가 입력시 i++ 해서 3,4,5,6 쭉쭉 더하면서 끝까지 만들어감
+    // 이게 top-down? -> 큰 문제를 작은 것부터 해결하면서 풀도록 설계
     for (let i = memo.length; i <= x; i++) {
         memo.push([memo[i - 1][0] + memo[i - 2][0], memo[i - 1][1] + memo[i - 2][1]]);
     }
