@@ -15,7 +15,7 @@ function solution(m, n, puddles) {
 
     // 물 웅덩이 위치 초기화
     for (const [x, y] of puddles) {
-        dp[x][y] = -1;
+        dp[y][x] = -1;
     }
 
     // DP를 통한 최단경로 개수 계산
@@ -29,8 +29,8 @@ function solution(m, n, puddles) {
                 // 오른과 아래의 값을 더해 최단경로 개수 계산
                 // 더해줄때는 %= mod 없어도 테스트는 통과
                 // 하지만 실제로 더 큰 수가 들어올 경우 실패할듯?
-                if (i > 1) dp[i][j] += dp[i - 1][j] %= mod;
-                if (j > 1) dp[i][j] += dp[i][j - 1] %= mod;
+                if (i > 1) dp[i][j] += dp[i - 1][j] % mod;
+                if (j > 1) dp[i][j] += dp[i][j - 1] % mod;
 
                 // 여기서는 안해주면 테스트 실패
                 // 아마 합해져서 2^31-1 넘어갔을듯??
