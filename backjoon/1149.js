@@ -5,7 +5,11 @@
 
 const fs = require('fs');
 const stdin = process.platform === 'darwin' ? './example.txt' : '/dev/stdin';
-const num = fs.readFileSync(stdin).toString().trim().split('\n').map(s => +s);
+const [tempNum, tempNumArr] = fs.readFileSync(stdin).toString().trim().split('\n');
+
+const num = +tempNum;
+const numArr = tempNumArr.split(' ').map(num => +num);
 
 
 console.log('---answer---', num);
+console.log('---answer---', numArr);
